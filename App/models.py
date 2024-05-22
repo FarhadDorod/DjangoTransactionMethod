@@ -11,9 +11,9 @@ class TransactionInformation(models.Model):
     """
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    phone_number = models.CharField(max_length=15)
-    national_code = models.CharField(max_length=10)
-    deposit_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    phone_number = models.CharField(max_length=20)
+    national_code = models.CharField(max_length=100)
+    deposit_amount = models.CharField(max_length=100)
     bank_account = models.CharField(max_length=30)
     bank_name = models.CharField(max_length=30)
     datetime = models.DateTimeField(auto_now_add=True)
