@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Transaction method</title>
+</head>
+
+<body>
+
+    <h1>This is a testing of the Transaction method.</h1>
+    <p>Please enter your information.</p>
+
+    <form method="post" action="{% url 'deposit' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><input type="text" name="first_name" id="first_name" placeholder="First Name"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="last_name" id="last_name" placeholder="Last Name"></td>
+            </tr>
+            <tr>
+                <td><input type="Number" name="phone_number" id="phone_number" placeholder="Phone Number"></td>
+            </tr>
+            <tr>
+                <td><input type="Number" name="national_code" id="national_code" placeholder="National Code"></td>
+            </tr>
+            <tr>
+                <td><input type="email" name="email" id="email" placeholder="Email address"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name='deposit_amount' id='deposit_amount' inputmode="decimal" pattern="[0-9]*([.,][0-9]+)?"
+                        placeholder="Enter amount" title="Please enter a valid amount">
+                    <label for="deposit_amount">$</label>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="Number" name="bank_account" id="bank_account" placeholder="Bank Account Number"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="bank_name" id="bank_name" placeholder="Bank Name"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="datetime">Today is: {{ DateTimeNow }}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="status">Status: {{ Status }}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Deposit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
