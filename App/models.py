@@ -4,6 +4,7 @@
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from datetime import datetime
 
 class TransactionInformation(models.Model):
     """
@@ -12,12 +13,13 @@ class TransactionInformation(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     phone_number = models.CharField(max_length=20)
-    national_code = models.CharField(max_length=100)
+    national_code = models.CharField(max_length=20)
+    email = models.CharField(max_length=100)
     deposit_amount = models.CharField(max_length=100)
     bank_account = models.CharField(max_length=30)
-    bank_name = models.CharField(max_length=30)
-    datetime = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=15)
+    bank_name = models.CharField(max_length=100)
+    datetime = models.DateTimeField(default=datetime.now(), editable=False)
+    status = models.CharField(max_length=30, default="None", editable=False)
 
     class Meta:
         """
